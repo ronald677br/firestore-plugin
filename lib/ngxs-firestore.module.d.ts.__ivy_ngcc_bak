@@ -1,0 +1,5 @@
+import { ModuleWithProviders } from '@angular/core';
+import { NgxsFirestoreModuleOptions } from './tokens';
+export declare class NgxsFirestoreModule {
+    static forRoot(options?: NgxsFirestoreModuleOptions): ModuleWithProviders<NgxsFirestoreModule>;
+}

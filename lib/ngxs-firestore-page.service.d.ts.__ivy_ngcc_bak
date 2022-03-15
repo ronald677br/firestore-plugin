@@ -1,0 +1,24 @@
+import { Observable } from 'rxjs';
+import { Actions } from '@ngxs/store';
+import { AngularFirestore, FieldPath, QueryFn } from '@angular/fire/firestore';
+export interface FirestorePage {
+    limit: number;
+    id: string;
+}
+export declare class NgxsFirestorePageIdService {
+    private firestore;
+    constructor(firestore: AngularFirestore);
+    createId(): string;
+}
+export declare class NgxsFirestorePageService {
+    private actions$;
+    private pageId;
+    constructor(actions$: Actions, pageId: NgxsFirestorePageIdService);
+    create<T>(queryFn: (pageFn: QueryFn) => Observable<T>, size: number, orderBy: {
+        fieldPath: string | FieldPath;
+        directionStr?: 'desc' | 'asc';
+    }[]): Observable<{
+        results: T;
+        pageId: string;
+    }>;
+}

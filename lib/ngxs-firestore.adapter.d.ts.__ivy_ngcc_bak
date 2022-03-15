@@ -1,0 +1,10 @@
+import { AngularFirestore } from '@angular/fire/firestore';
+import { NgxsFirestoreModuleOptions } from './tokens';
+import { Store } from '@ngxs/store';
+import 'firebase/firestore';
+export declare class NgxsFirestoreAdapter {
+    firestore: AngularFirestore;
+    store: Store;
+    options: NgxsFirestoreModuleOptions;
+    constructor(firestore: AngularFirestore, store: Store, options: NgxsFirestoreModuleOptions);
+}
